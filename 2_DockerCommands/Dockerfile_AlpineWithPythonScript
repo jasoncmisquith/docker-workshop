@@ -1,0 +1,10 @@
+FROM python:3.9-alpine
+
+RUN mkdir /app
+
+COPY src/mypythonscript.py /app/
+
+WORKDIR /app/
+
+RUN [ "python", "mypythonscript.py" ]
+

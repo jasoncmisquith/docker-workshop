@@ -6,13 +6,15 @@
 
 ```
 sudo apt-get update
-
+```
+```
 sudo apt-get install curl
-
+```
+```
 curl -fsSL https://get.docker.com -o get-docker.sh
-
+```
+```
 sudo sh get-docker.sh
-
 ```
 
 ## Manual Approach:
@@ -67,7 +69,7 @@ Docker Desktop needs WSL2 to be installed. Below steps will help with the instal
 
 ---
 **NOTE**
-- If you face any error during this setup it is likely because the Virutalization needs to be enabled on BIOS.
+- If you face any error during this setup it is likely because Virutalization needs to be enabled on BIOS.
 ---
 
 https://docs.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package
