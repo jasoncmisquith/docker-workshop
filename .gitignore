@@ -1,0 +1,2 @@
+persist_db_data/*
+!persist_db_data/*.md

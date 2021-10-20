@@ -81,7 +81,7 @@ In above exercise we were able to run our script inside the container, we notice
 
 ---
 
-Let us try something else now! lets load a simple python easter egg.
+Let us try something else now! lets load a simple python http server. For this exercise we will build on top of python docker image and start a simple python server which will serve index.html
 
 ```
 docker build . -f Dockerfile_PythonHttpServer -p 8000:8000 --tag mysimpleserver:latest
@@ -90,9 +90,7 @@ docker build . -f Dockerfile_PythonHttpServer -p 8000:8000 --tag mysimpleserver:
 docker run -it --name mycontainerserver mysimpleserver:latest
 ```
 
-For this exercise we will use an official python docker image and start a simple python server which will serve index.html
-
-If above steps have run fine  you should be able to open
+If above steps have run fine you should be able to open
 
 http://localhost:8000/index.html
 

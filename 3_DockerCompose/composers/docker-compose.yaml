@@ -1,0 +1,19 @@
+version: "3.9" 
+services:
+  helloworld:
+    build:
+      context: ..
+      # dockerfile: Dockerfile_Flask
+    image: flaskserver:latest
+    name: appserver
+    ports:
+      - "5000:5000"
+    env:
+      - FLASK_APP=helloworld
+
+  database:
+    image: postgres:13
+    env_file:
+      - database.env # configure postgres
+    volumes:
+      - ../../persist_db_data/data:/var/lib/postgresql/data
