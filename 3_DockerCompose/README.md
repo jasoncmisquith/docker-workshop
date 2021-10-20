@@ -22,10 +22,17 @@ docker run -it --name postgres -e POSTGRES_PASSWORD=mysecretpassword postgres:13
 docker exec -it postgres bash
 ```
 
+### Mounting volumes
+
+
 ### docker-compose
 As you can notice until now we have had to write down the commands so many times, wouldn't it be better if we could run/manage these commands via a file. One of such orchestration tools is docker-compose.
 
-### Mounting volumes
+```
+cd composers
+docker-compose up
+```
+
 
 
 # Reference:
