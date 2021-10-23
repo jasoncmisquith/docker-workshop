@@ -84,10 +84,10 @@ In above exercise we were able to run our script inside the container, we notice
 Let us try something else now! lets load a simple python http server. For this exercise we will build on top of python docker image and start a simple python server which will serve index.html
 
 ```
-docker build . -f Dockerfile_PythonHttpServer -p 8000:8000 --tag mysimpleserver:latest
+docker build . -f Dockerfile_PythonHttpServer --tag mysimpleserver:latest
 ```
 ```
-docker run -it --name mycontainerserver mysimpleserver:latest
+docker run -it --name mycontainerserver -p 8000:8000 mysimpleserver:latest
 ```
 
 If above steps have run fine you should be able to open
