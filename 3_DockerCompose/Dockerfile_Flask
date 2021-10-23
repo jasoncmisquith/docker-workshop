@@ -4,8 +4,6 @@ RUN mkdir /app
 
 RUN pip install flask
 
-COPY src/flaskserver.py /app/
+COPY src/ /app/
 
-WORKDIR /app/
-
-RUN [ "flask", "run" ]
+WORKDIR /app/flask_app

@@ -3,13 +3,46 @@ services:
   helloworld:
     build:
       context: ..
-      # dockerfile: Dockerfile_Flask
+      dockerfile: Dockerfile_Flask
     image: flaskserver:latest
-    name: appserver
+    container_name: appserver
+    command: python helloworld.py
     ports:
       - "5000:5000"
-    env:
+    environment:
       - FLASK_APP=helloworld
+      - FLASK_ENV=development
+
+  mountedhelloworld:
+    build:
+      context: ..
+      dockerfile: Dockerfile_Flask
+    image: flaskserver:latest
+    container_name: mountedhelloworld
+    command: python mountedhelloworld.py
+    ports:
+      - "5002:5000"
+    environment:
+      - FLASK_APP=helloworld
+      - FLASK_ENV=development
+    volumes:
+      - ../src/flask_app:/app/flask_app
+
+  
+  storeafile:
+    build:
+      context: ..
+      dockerfile: Dockerfile_Flask
+    image: flaskserver:latest
+    container_name: storeafile
+    command: python storeafile.py
+    ports:
+      - "5001:5000"
+    environment:
+      - FLASK_APP=storeafile
+      - FLASK_ENV=development
+    volumes:
+      - ../src/flask_app:/app/flask_app
 
   database:
     image: postgres:13

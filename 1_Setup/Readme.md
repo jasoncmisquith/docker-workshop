@@ -8,7 +8,7 @@
 sudo apt-get update
 ```
 ```
-sudo apt-get install curl
+sudo apt-get install curl git
 ```
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
