@@ -10,10 +10,10 @@
 
 This exercise will start with a simple flask app that returns hello world. Lets build and run 
 ```
-docker build . -f Dockerfile_Flask -p 5000:5000 -e FLASK_APP=helloworld_flaskapp --tag flaskserver:latest
+docker build . -f Dockerfile_Flask -e FLASK_APP=helloworld_flaskapp --tag flaskserver:latest
 ```
 ```
-docker run -it --name appserver flaskserver:latest
+docker run -it --name appserver -p 5000:5000  flaskserver:latest
 ```
 ```
 docker run -it --name postgres -e POSTGRES_PASSWORD=mysecretpassword postgres:13
