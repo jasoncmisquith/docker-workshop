@@ -43,6 +43,7 @@ services:
       - FLASK_ENV=development
     volumes:
       - ../src/flask_app:/app/flask_app
+      - ../../filestore:/filestore:/filestore
 
   database:
     image: postgres:13

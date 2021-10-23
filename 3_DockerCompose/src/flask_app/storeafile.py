@@ -5,10 +5,10 @@ app = Flask(__name__)
 @app.route('/store_file', methods=['post'])
 def store_file():
     file_name = request.form.get('filename')
-    if not file_name:
+    if not file_name or ("." not in file_name):
         return
     file_content = request.form.get('content')
-    with open(file_name, 'w') as fp:
+    with open('/filestore/' + file_name, 'w') as fp:
         fp.write(file_content)
     return redirect(url_for('index'))
 
