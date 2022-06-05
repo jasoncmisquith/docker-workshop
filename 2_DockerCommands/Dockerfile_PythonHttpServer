@@ -8,4 +8,4 @@ COPY src/index.html /app/
 
 WORKDIR /app/
 
-RUN [ "python", "-m", "http.server" ]
+CMD [ "python", "-m", "http.server" ]
