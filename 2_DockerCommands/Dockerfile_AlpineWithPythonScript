@@ -6,5 +6,5 @@ COPY src/mypythonscript.py /app/
 
 WORKDIR /app/
 
-RUN [ "python", "mypythonscript.py" ]
+CMD [ "python", "mypythonscript.py" ]
 
